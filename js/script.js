@@ -1,33 +1,66 @@
 
 let home = $(".home");
-let timeOfDay = ["6 AM","7 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", '5 PM', '6 PM']
 let currentTime = moment()
+let submitButton = $(".btn")
+let momentlength = ["1","2","3","4", "5", "6", "7", "8", "9", "10", "11", "12"]
+let length = momentlength.length
 
 
 
-for (i = 0; i < timeOfDay.length; i++){
-    let timeArray = [];
-    let dayDiv = home.append("<div class=\"time\">");
+    for (i = 0; i <= localStorage.length-1; i++)    
+    {     
+        key = sessionStorage.key(i);    
+        val = sessionStorage.getItem(key);     
+    }   
+  
 
-    timeArray.push(timeOfDay[i]);
-    dayDiv.append(timeArray);
 
 
+
+
+for(let i = 0; i < length; i++){
+  let forms = $("<form></form>")
+  let textArea = $("<textarea class=\"txt\" placeholder=\"Enter Task Here!\"></textarea>")
+  let formContainer = $("#forms")
+
+    formContainer.append(forms)
+    forms.append(textArea)
+    $(".txt").each(function (index) {
+      $(this).attr('ident', index+1);
+  });
+    
 }
 
+$(submitButton).on("click", function(){
+    storeLocal()
+})
 
-function storeLocal(input) {
-    let emptyString ="A"
-    let userInput = $(".Submitform-control-md")
-    let submitButton = $(".btn")
-    userInput.val(45)
-    console.log(userInput.val())
 
-console.log(emptyString)
-}
+
+
+
+function storeLocal() {
+  let grabATTR = $(".txt").attr("ident");
+  let val = $(".txt").val()
+  localStorage.setItem(grabATTR, JSON.stringify(val))
+  //let x = formValue
+      //if (x == "") {
+      //alert("Name must be filled out");
+      //return false;
+    //}
+    
+  }
+  
+
+
+
+
 
 
 console.log(currentTime)
-console.log(currentTime.toString())
 console.log(currentTime._locale._months)
 console.log(currentTime._locale._weekdays)
+console.log(momentlength)
+
+console.log()
+
