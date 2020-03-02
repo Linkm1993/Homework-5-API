@@ -1,17 +1,17 @@
-
 let home = $(".home");
 let currentTime = moment()
 let submitButton = $(".btn")
 let momentlength = ["1","2","3","4", "5", "6", "7", "8", "9", "10", "11", "12"]
 let length = momentlength.length
+let val = [];
 
 
 
-    for (i = 0; i <= localStorage.length-1; i++)    
-    {     
-        key = sessionStorage.key(i);    
-        val = sessionStorage.getItem(key);     
-    }   
+    // for (i = 0; i <= localStorage.length-1; i++)    
+    // {     
+    //     key = sessionStorage.key(i);    
+    //     val = sessionStorage.getItem(key);     
+    // }   
   
 
 
@@ -37,30 +37,170 @@ $(submitButton).on("click", function(){
 
 
 
-
+let test = moment().format("MM/DD/YYYY");
+console.log(test);
 
 function storeLocal() {
-  let grabATTR = $(".txt").attr("ident");
-  let val = $(".txt").val()
-  localStorage.setItem(grabATTR, JSON.stringify(val))
-  //let x = formValue
-      //if (x == "") {
-      //alert("Name must be filled out");
-      //return false;
-    //}
+  let index = $(".txt")
+  val = [];
+  console.log(index)
+  for(i = 0; i < length; i++){
+    let grabATTR = $(".txt").attr("ident");
+    val.push(index[i].value);
+    localStorage.setItem(grabATTR, val)
+    console.log(val);
     
-  }
-  
+    //let x = formValue
+        //if (x == "") {
+        //alert("Name must be filled out");
+        //return false;
+      }
+      window.localStorage.setItem(test, val);
+    }
 
 
 
 
 
 
-console.log(currentTime)
-console.log(currentTime._locale._months)
-console.log(currentTime._locale._weekdays)
-console.log(momentlength)
 
-console.log()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
