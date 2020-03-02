@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #e0dada;
 }
 
 .btn, .time, .Submitform-control-md {
@@ -10,4 +11,8 @@ body {
 
 .time {
     font-size: larger;
+}
+
+.col {
+    border: #e0dada;
 }
